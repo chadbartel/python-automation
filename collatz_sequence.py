@@ -6,11 +6,14 @@ def collatz(number):
 
 def recursive_collatz():
     print("Enter number:")
-    num = int(input())
-    collatz_num = collatz(num)
-    print(collatz_num)
-    while collatz_num != 1:
-        collatz_num = collatz(collatz_num)
+    try:
+        num = int(input())
+        collatz_num = collatz(num)
         print(collatz_num)
+        while collatz_num != 1:
+            collatz_num = collatz(collatz_num)
+            print(collatz_num)
+    except ValueError as ve:
+        print('ERROR:', ve)
 
 recursive_collatz()
